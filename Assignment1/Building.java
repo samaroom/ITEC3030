@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class Building {
     private ArrayList<Room> rooms = new ArrayList<Room>();
-    private _________________ furnace = null;
+    private OnOffAble furnace = null;
     private NumericMeasurementInstrument thermostat = null;
 
     /**
