@@ -6,8 +6,8 @@
 package itec3030.assignments.a1;
 import java.util.ArrayList;
 
-import itec3030.smarthome.standards._________________;
-import itec3030.smarthome.standards._________________;
+import itec3030.smarthome.standards.TemperatureSensor;
+import itec3030.smarthome.standards.SmartThing;
 
 /**
  * A Room object for maintaining room information.
@@ -15,7 +15,7 @@ import itec3030.smarthome.standards._________________;
  */
 public class Room {
     private String name = "default";
-    private ArrayList<_________________> tempSensors = new ArrayList<>();
+    private ArrayList<TemperatureSensor> tempSensors = new ArrayList<>();
     
     /**
      * The name of the Room (e.g. Living Room)
@@ -42,7 +42,7 @@ public class Room {
      * Use this function to "add" a temperature sensor to the room.
      * @param t Reference to an object that implements TemperatureSensor.
      */
-    public void install(_________________ t){
+    public void install(TemperatureSensor t){
         tempSensors.add(t);
     }
    
@@ -58,7 +58,7 @@ public class Room {
     public float getAvergeTemperature(){
         float count = 0;
         float sum = 0;
-        for (_________________ s : tempSensors){
+        for (TemperatureSensor s : tempSensors){
             sum += s.getReading();
             count++;
         }
@@ -70,9 +70,9 @@ public class Room {
      * @param s Reference to an objects that implements SmartThing.
      * @return True if the Thing is installed in the room. Currently checks only the collection of temperature sensors.
      */
-    public boolean hasThing(_________________ s) {
+    public boolean hasThing(SmartThing s) {
         boolean found = false;
-        for (_________________ t :  tempSensors) {
+        for (TemperatureSensor t :  tempSensors) {
             if (t.equals(s)) found = true;
         }
         // Collection of other types can be added here.
