@@ -24,14 +24,14 @@ public class Building {
      * @return The desired temperature.
      */
     public int getDesiredTemperature() {
-        return thermostat._________________();
+        return thermostat.getReading();
     }
 
     /**
      * Returns a reference to the furnace installed in the building. 
      * @return A reference to the furnace installed in the building. 
      */
-    public _________________ getFurnace() {
+    public OnOffAble getFurnace() {
         return furnace;
     }
     
@@ -39,7 +39,7 @@ public class Building {
      * "Installs" a furnace in the building. 
      * @param frn A reference to the furnace to be installed in the building. 
      */
-    public void setFurnace(_________________ frn){
+    public void setFurnace(OnOffAble frn){
         furnace = frn;
     }
      
@@ -79,10 +79,10 @@ public class Building {
      * @param s Reference to a SmartThing.
      * @return Reference to the Room in which the SmartThing is installed.
      */
-    public Room findRoomOf(_________________ s){
+    public Room findRoomOf(SmartThing s){
         Room found = null;
         for (Room r : rooms){
-            if (r.hasThing((_________________) s)) 
+            if (r.hasThing((SmartThing) s)) 
                 found = r;
         }
         return(found);
